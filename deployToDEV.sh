@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-docker-compose down
-docker-compose up -d
+rancher-compose --url $DEV_RANCHER_SERVER --access-key $KEY --secret-key $SECRET rm
+rancher-compose --url $DEV_RANCHER_SERVER --access-key $KEY --secret-key $SECRET up -d

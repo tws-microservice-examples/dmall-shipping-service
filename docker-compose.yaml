@@ -1,14 +1,9 @@
 version: '2'
-
 services:
   dmall-registry-server:
-      image: dmall-docker-registry:5000/dmall/shipping-service:$BUILD_NUMBER
-      mem_limit: 768m
-      networks:
-          - jenkins_dmall-network
-      ports:
-          - "8081:8081"
-
-networks:
-  jenkins_dmall-network:
-    external: true
+    image: '${DMALL_DOCKER_REGISTRY}/dmall/shipping-server:${BUILD_NUMBER}'
+    ports:
+      - "8081:8081"
+    external_links:
+        - dmall-config-server/dmall-config-server:dmall-config-server
+        - dmall-registry-server/dmall-registry-server:dmall-registry-server
