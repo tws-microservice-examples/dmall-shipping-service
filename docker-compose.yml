@@ -2,6 +2,8 @@ version: '2'
 services:
   dmall-shipping-service:
     image: '${DMALL_DOCKER_REGISTRY}/dmall/shipping-service:${BUILD_NUMBER}'
+    environment:
+      ACTIVE_PROFILE: dev
     ports:
       - "8081:8081"
     external_links:
