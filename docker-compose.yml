@@ -1,6 +1,6 @@
 version: '2'
 services:
-  dmall-registry-service:
+  dmall-shipping-service:
     image: '${DMALL_DOCKER_REGISTRY}/dmall/shipping-service:${BUILD_NUMBER}'
     ports:
       - "8081:8081"
